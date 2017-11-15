@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+filename = ARGV[0]
+count = ARGV[1]
+
+file = File.open(filename, 'r')
+
+lines = file.readlines
+
+count = nil if lines.count < count.to_i
+
+if count
+    puts lines.sample(count.to_i)
+else
+    puts lines.shuffle
+end
