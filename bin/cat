@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
 ARGV.each do |filename|
-	File.open(filename, "r") { |io| STDOUT.print io.read }
+    File.open(filename, "r") { |io| STDOUT.print io.read }
 end

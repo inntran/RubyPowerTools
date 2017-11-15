@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+ARGV.each do |filename|
+    file = File.open(filename, "r")
+    file.each_line.reverse_each do |fl|
+        STDOUT.print fl
+    end
+    file.close
+end
