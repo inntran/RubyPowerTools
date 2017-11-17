@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 filename = ARGV[0]
-count = ARGV[1].to_i || 10
+count = ARGV[1] || 10
+count = count.to_i
 
 file = File.open(filename, 'r')
 
