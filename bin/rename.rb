@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Inspired by Perl's rename tool: http://search.cpan.org/~rmbarker/File-Rename/
 
 match_regex, replace_text, *filenames = ARGV
 
