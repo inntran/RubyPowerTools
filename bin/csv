@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'csv'
+
+FILE=File.expand_path(ARGV[0], Dir.pwd)
+COLUMN=ARGV[1]
+
+# Refernece: https://github.com/rubyworks/facets/blob/master/lib/core/facets/string/lchomp.rb
+class String
+  def lchomp(match)
+    if index(match) == 0
+      self[match.size..-1]
+    else
+      self.dup
+    end
+  end
+end
+
+if COLUMN.nil?
+  fh = File.open(FILE, 'r')
+  puts fh.readline
+else
+  CSV.foreach(FILE, {headers: :first_row}) do |ca|
+    puts ca[COLUMN].chomp("'").lchomp("'")
+  end
+end
